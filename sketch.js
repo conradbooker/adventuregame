@@ -22,10 +22,20 @@ function setup(){
 }
 function draw(){
     image(roomArr[roomNum], 0,0,650,500)
-    noStroke()
+    strokeWeight(0)
     fill("green")
     triangle(25,440, 55, 420, 55, 460)
     triangle(630, 440, 600, 420, 600,460)
+    if (roomNum===0){
+      fill("white")
+      
+      rect(330,268,18,10)
+      fill('red')
+      quad(330,268,325,265,325,281,330,278)
+      quad(348,268,353,265,353,281,348,278)
+      fill("green")
+      circle(368,273,6)
+    }
     
         
 }
@@ -37,5 +47,10 @@ function mouseClicked(){
     } 
     if (mouseX>=600 && mouseX<=630 && mouseY<=460 && mouseY>=420 && roomNum<4){
       roomNum += 1
+    }
+    if (mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
+      textSize(100)
+      fill("red")
+      text("When was Trinity founded?", 330,268)
     }
   }

@@ -46,6 +46,7 @@ function preload() {
     roomArr[1] = loadImage("files/libery.png")
     roomArr[4] = loadImage("files/lockers.png")
     roomArr[0] = loadImage("files/turf.png")
+    roomArr[3]=loadImage("files/kolman.jpeg")
 
     pen = loadImage("files/pen.jpg")
     laptop = loadImage("files/laptop.png")
@@ -54,20 +55,20 @@ function preload() {
     loudSpeakerSound = loadSound('files/lmao.mp3')
     charger=loadImage("files/79954.png")
     printer =loadImage("files/229453.png")
-    roomArr[3]=loadImage("files/kolman.jpeg")
+    
 }
 function setup(){
     createCanvas(650,500)
     background(200)
 }
 function draw(){
-
+    
     image(roomArr[roomNum], 0,0,650,500)
     strokeWeight(0)
     fill("green")
     triangle(25,440, 55, 420, 55, 460)
     triangle(630, 440, 600, 420, 600,460)
-
+    image(pen,250,250)
     // turf
     if (roomNum===0){
       fill("white")
@@ -96,11 +97,12 @@ function draw(){
     }
 
     if (roomNum == 3){
-      push();
-        translate(436,265)
-        scale(.25)
-        image(pen,0,0)
-        pop();
+
+      if (roomObject[3].length != 0){
+        image(pen,270,300,25,25)
+        
+      }
+      
     }
     if (roomNum==4){
       fill(0)
@@ -133,15 +135,13 @@ function mouseClicked() {
     
     // Turf
     if (roomNum==0 && mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
-<<<<<<< HEAD
-      
-=======
-      //sound
->>>>>>> 021dc3ff15936a22529f9305ee793855f027a9f1
+
     }
 
     // lockers
     if (roomNum==3 && mouseX>=520 && mouseX<=580 && mouseY<=400 && mouseY>=145){
       //show numpad
     }
+
+    //laptop in inventory
   }

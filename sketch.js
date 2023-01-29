@@ -56,7 +56,7 @@ function draw(){
       circle(368,273,6)
     }
     if (roomNum==2){
-      image(charger, 360,290, 75, 40)
+      image(charger, 360,288, 70, 35)
     }
     if (roomNum==3){
       fill(0)
@@ -76,7 +76,7 @@ function draw(){
 
 
 function mouseClicked(){
-    console.log(mouseX, mouseY)
+    //console.log(mouseX, mouseY)
     if (mouseX>=20 && mouseX<=60 && mouseY<=460 && mouseY>=420 && roomNum>0){
       roomNum -=1
     } 
@@ -86,7 +86,11 @@ function mouseClicked(){
 
     // Turf
     if (roomNum==0 && mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
+<<<<<<< HEAD
+      
+=======
       //sound
+>>>>>>> 021dc3ff15936a22529f9305ee793855f027a9f1
     }
 
     //

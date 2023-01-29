@@ -7,6 +7,7 @@ let pen = false
 let hc = false
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  background(255,255,0)
   num = 0
 }
 

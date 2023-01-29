@@ -32,8 +32,8 @@ function preload() {
     roomArr[3] = loadImage("files/lockers.png")
     roomArr[0] = loadImage("files/turf.png")
     honorCodeImage = loadImage("files/honorCodeImage.png")
-    loudSpeakerSoubnd = loadSound('files/lmao.mp3')
-    charger=loadImage("files/79954.png")
+    loudSpeakerSound = loadSound('files/lmao.mp3')
+    charger = loadImage("files/79954.png")
 }
 function setup(){
     createCanvas(650,500)
@@ -89,7 +89,7 @@ function mouseClicked(){
       //sound
     }
 
-    //
+    // lockers
     if (roomNum==3 && mouseX>=520 && mouseX<=580 && mouseY<=400 && mouseY>=145){
       //show numpad
     }

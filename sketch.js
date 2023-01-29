@@ -23,17 +23,29 @@ function draw(){
     image(roomArr[roomNum], 0,0,650,500)
     noStroke()
     fill("green")
-    triangle(25,440, 55, 420, 55, 460)
-    triangle(630, 440, 600, 420, 600,460)
-        
+    if (roomNum > 0) {
+      triangle(25,440, 55, 420, 55, 460)
+    }
+    if (roomNum < 4) {
+      triangle(630, 440, 600, 420, 600,460)
+    }
+
+    image(honorCodeImage, 0, 0, 200, 200)
+
 }
 
 
 function mouseClicked(){
-    if (mouseX>=20 && mouseX<=60 && mouseY<=460 && mouseY>=420 && roomNum>0){
-      roomNum -=1
-    } 
-    if (mouseX>=600 && mouseX<=630 && mouseY<=460 && mouseY>=420 && roomNum<5){
-      roomNum += 1
+    if (roomNum > 0) {
+      if (mouseX>=20 && mouseX<=60 && mouseY<=460 && mouseY>=420 && roomNum>=0){
+        roomNum -= 1
+        console.log("dddddd")
+      } 
     }
+    if (roomNum < 4) {
+      if (mouseX>=600 && mouseX<=630 && mouseY<=460 && mouseY>=420 && roomNum<=4){
+        roomNum += 1
+        console.log(roomNum)
+      }
+  }
   }

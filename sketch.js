@@ -8,6 +8,23 @@ let honorCodeImage
 let roomNum=0
 let roomArr=[];
 
+let showNumpad = false
+let playSpeaker = false
+// let showNumpad = false
+// let showNumpad = false
+// let showNumpad = false
+// let showNumpad = false
+// let showNumpad = false
+// let showNumpad = false
+// let showNumpad = false
+// let showNumpad = false
+// let showNumpad = false
+// let showNumpad = false
+// let showNumpad = false
+// let showNumpad = false
+// let showNumpad = false
+// let showNumpad = false
+
 function preload() {
     roomArr[4] = loadImage("files/101.png")
     roomArr[2] = loadImage("files/classroom.png")
@@ -15,7 +32,7 @@ function preload() {
     roomArr[3] = loadImage("files/lockers.png")
     roomArr[0] = loadImage("files/turf.png")
     honorCodeImage = loadImage("files/honorCodeImage.png")
-    loudSpeakerSoubnd = loadSound('files/lmao.m4a')
+    loudSpeakerSoubnd = loadSound('files/lmao.mp3')
     charger=loadImage("files/79954.png")
 }
 function setup(){
@@ -66,12 +83,13 @@ function mouseClicked(){
     if (mouseX>=600 && mouseX<=630 && mouseY<=460 && mouseY>=420 && roomNum<5){
       roomNum += 1
     }
+
+    // Turf
     if (roomNum==0 && mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
-      textSize(100)
-      fill("red")
-      text("When was Trinity founded?", 330,268)
+      //sound
     }
 
+    //
     if (roomNum==3 && mouseX>=520 && mouseX<=580 && mouseY<=400 && mouseY>=145){
       //show numpad
     }

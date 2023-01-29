@@ -8,6 +8,21 @@ let honorCodeImage
 let roomNum=0
 let roomArr=[];
 
+let objects = ["pen","laptop","id","honor code"]
+// 0 pen 3
+// 1 laptop 1
+// 2 id 4
+// 3 honor code inv
+
+// turf 0
+// library 1
+// cs lab 2
+// kiolman 3
+// locker 4
+// 101 5
+let roomObject = [[],[1],[],[0],[3],[]]
+let inventory = []
+
 let showNumpad = false
 let playSpeaker = false
 // let showNumpad = false
@@ -31,16 +46,20 @@ function preload() {
     roomArr[1] = loadImage("files/libery.png")
     roomArr[3] = loadImage("files/lockers.png")
     roomArr[0] = loadImage("files/turf.png")
+
+    pen = loadImage("files/pen.png")
+    laptop = loadImage("files/laptop.png")
+    // id = loadImage("files/id.png)
     honorCodeImage = loadImage("files/honorCodeImage.png")
-    loudSpeakerSound = loadSound('files/lmao.mp3')
-    charger = loadImage("files/79954.png")
+    loudSpeakerSoubnd = loadSound('files/lmao.mp3')
+    charger=loadImage("files/79954.png")
 }
 function setup(){
     createCanvas(650,500)
     background(200)
 }
 function draw(){
-    
+    roomNum=2
     image(roomArr[roomNum], 0,0,650,500)
     strokeWeight(0)
     fill("green")
@@ -58,8 +77,16 @@ function draw(){
       fill("green")
       circle(368,273,10)
     }
+
+    if (roomNum == 1){
+      if (roomObject[1].length != 0){
+        image(laptop,100,100)
+      }
+    }
     if (roomNum==2){
-      image(charger, 360,288, 70, 35)
+      image(charger, 370,290, 70, 35)
+      image(printer, 370, 260, 50, 50)
+      
     }
     if (roomNum==3){
       fill(0)
@@ -89,18 +116,18 @@ function mouseClicked() {
       roomNum += 1
       console.log("plus")
     }
-
+    
     // Turf
-    if (mouseX >= 358 && mouseX <= 378 && mouseY <= 283 && mouseY >= 263) {
-      console.log("heu")
-      text("hey", 100, 100)
-
-      // loadSpeakerSound.play()
+    if (roomNum==0 && mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
+<<<<<<< HEAD
+      
+=======
       //sound
+>>>>>>> 021dc3ff15936a22529f9305ee793855f027a9f1
     }
 
     // lockers
-    // if (roomNum==3 && mouseX>=520 && mouseX<=580 && mouseY<=400 && mouseY>=145){
-    //   //show numpad
-    // }
+    if (roomNum==3 && mouseX>=520 && mouseX<=580 && mouseY<=400 && mouseY>=145){
+      //show numpad
+    }
   }

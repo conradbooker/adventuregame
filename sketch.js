@@ -6,13 +6,21 @@ let lockersImage
 let turfImage
 let honorCodeImage
 
-function preload() {
-    exitImage = loadImage("files/101.png")
-    classroomImage = loadImage("files/classroom.png")
-    libraryImage = loadImage("files/libery.png")
-    lockersImage = loadImage("files/lockers.png")
-    turfImage = loadImage("files/turf.png")
-    honorCodeImage = loadImage("files/honorCodeImage.png")
-    exitImage = loadImage("files/101.png")
-}
+let roomArr=[];
 
+function preload() {
+    roomArr[5] = loadImage("files/101.png")
+    roomArr[2] = loadImage("files/classroom.png")
+    roomArr[1] = loadImage("files/libery.png")
+    roomArr[4] = loadImage("files/lockers.png")
+    roomArr[0] = loadImage("files/turf.png")
+    roomArr[3] = loadImage("files/honorCodeImage.png")
+}
+function setup(){
+    createCanvas(650,500)
+}
+function draw(){
+
+    image(roomArr[num], 0,0,650,500)
+    
+}

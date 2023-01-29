@@ -38,7 +38,7 @@ function rooms(num) {
 
 
 function mouseClicked(){
-  if (mouseX>=20 && mouseX<=60 && mouseY<=460 && mouseY>=420){
+  if (mouseX>=20 && mouseX<=60 && mouseY<=460 && mouseY>=420 && num >0){
     num -=1
   } 
   if (mouseX>=600 && mouseX<=630 && mouseY<=460 && mouseY>=420){

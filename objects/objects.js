@@ -74,11 +74,14 @@ class honorCode {
     }
 }
 
+honorCodes = []
+
 function setup() {
     createCanvas(400, 400)
+    honorCodes.push(new honorCode(true, 100, 100))
 }
   
 function draw() {
     background(220)
-    honorCode()
+    honorCodes[0].show()
 }

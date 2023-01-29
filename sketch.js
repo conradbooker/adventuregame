@@ -26,22 +26,22 @@ let playSpeaker = false
 // let showNumpad = false
 
 function preload() {
-    roomArr[4] = loadImage("files/101.png")
+    roomArr[5] = loadImage("files/101.png")
     roomArr[2] = loadImage("files/classroom.png")
     roomArr[1] = loadImage("files/libery.png")
-    roomArr[3] = loadImage("files/lockers.png")
+    roomArr[4] = loadImage("files/lockers.png")
     roomArr[0] = loadImage("files/turf.png")
     honorCodeImage = loadImage("files/honorCodeImage.png")
     loudSpeakerSound = loadSound('files/lmao.mp3')
     printer=loadImage("files/229453.png")
     charger=loadImage("files/79954.png")
+    roomArr[3]=loadImage("files/kolman.jpeg")
 }
 function setup(){
     createCanvas(650,500)
     background(200)
 }
 function draw(){
-    roomNum=2
     image(roomArr[roomNum], 0,0,650,500)
     strokeWeight(0)
     fill("green")
@@ -62,7 +62,7 @@ function draw(){
       image(printer, 370, 260, 50, 50)
       
     }
-    if (roomNum==3){
+    if (roomNum==4){
       fill(0)
       textSize(8)
       text("15", 441,272)
@@ -95,7 +95,7 @@ function mouseClicked(){
     }
 
     // lockers
-    if (roomNum==3 && mouseX>=520 && mouseX<=580 && mouseY<=400 && mouseY>=145){
+    if (roomNum==4 && mouseX>=520 && mouseX<=580 && mouseY<=400 && mouseY>=145){
       //you clicked your locker
       //show numpad
     }

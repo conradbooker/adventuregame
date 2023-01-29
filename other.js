@@ -1,6 +1,6 @@
 let num = 0
 
-objects = {1:"pen",2:"honor code", 3:"laptop"}
+objects = ["pen","honor code"]
 function setup() {
   createCanvas(windowWidth, windowHeight);
   num = 0
@@ -17,6 +17,7 @@ function draw() {
   fill("red")
   rect(0,0, 20,windowHeight)
 }
+
 
 function rooms(num) {
   color = ""

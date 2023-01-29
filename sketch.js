@@ -16,9 +16,11 @@ function preload() {
     roomArr[3] = loadImage("files/lockers.png")
     roomArr[0] = loadImage("files/turf.png")
     honorCodeImage = loadImage("files/honorCodeImage.png")
+    loudSpeakerSoubnd = loadSound('files/lmao.m4a')
 }
 function setup(){
     createCanvas(650,500)
+    background(200)
 }
 function draw(){
     image(roomArr[roomNum], 0,0,650,500)

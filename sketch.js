@@ -15,3 +15,4 @@ function preload() {
     honorCodeImage = loadImage("files/honorCodeImage.png")
     exitImage = loadImage("files/101.png")
 }
+

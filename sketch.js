@@ -74,7 +74,6 @@ function draw(){
     rect(175+30+25, 410, 50, 60)
     rect(325+30+25, 410, 50, 60)
     rect(475+30+25, 410, 50, 60)
-
     // turf
     if (roomNum===0){
       fill("white")
@@ -124,6 +123,10 @@ function draw(){
       text("19", 606,332)
     }
     text(mouseX+"   "+mouseY,mouseX,mouseY)
+    if (inventory.includes(objects[3])){
+      image(honorCodeImage, 475+30+25,410,50,60)
+    }
+
 }
 
 
@@ -141,7 +144,13 @@ function mouseClicked() {
     
     // Turf
     if (roomNum==0 && mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
+      
+      //sound
+    }
 
+    if (roomNum==2 && mouseX>=370 && mouseX <=420 && mouseY>=265 && mouseY<=300){
+      inventory.push(objects[3])
+      
     }
 
     // lockers

@@ -47,7 +47,7 @@ function preload() {
     roomArr[3] = loadImage("files/lockers.png")
     roomArr[0] = loadImage("files/turf.png")
 
-    pen = loadImage("files/pen.png")
+    pen = loadImage("files/pen.jpg")
     laptop = loadImage("files/laptop.png")
     // id = loadImage("files/id.png)
     honorCodeImage = loadImage("files/honorCodeImage.png")
@@ -59,7 +59,7 @@ function setup(){
     background(200)
 }
 function draw(){
-    roomNum=2
+
     image(roomArr[roomNum], 0,0,650,500)
     strokeWeight(0)
     fill("green")

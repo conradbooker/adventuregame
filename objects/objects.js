@@ -57,7 +57,18 @@ class honorCode {
     constructor(hasPen) {
         this.hasPen = hasPen
         this.signature = ""
-        this
+    }
 
+    update() {
+        if (this.hasPen === true) {
+            this.show()
+        }
+    }
+
+    show() {
+        
+        fill(227, 64, 64)
+        stroke(255)
+        circle(this.x, this.y, this.weight)
     }
 }

@@ -94,7 +94,7 @@ function mouseClicked(){
       //sound
     }
 
-    //
+    // lockers
     if (roomNum==3 && mouseX>=520 && mouseX<=580 && mouseY<=400 && mouseY>=145){
       //you clicked your locker
       //show numpad

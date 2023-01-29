@@ -37,7 +37,7 @@ function draw(){
       circle(368,273,6)
     }
     if (roomNum==2){
-      image(charger, 360,290, 75, 40)
+      image(charger, 360,288, 70, 35)
     }
     if (roomNum==3){
       fill(0)
@@ -57,7 +57,7 @@ function draw(){
 
 
 function mouseClicked(){
-    console.log(mouseX, mouseY)
+    //console.log(mouseX, mouseY)
     if (mouseX>=20 && mouseX<=60 && mouseY<=460 && mouseY>=420 && roomNum>0){
       roomNum -=1
     } 
@@ -65,9 +65,7 @@ function mouseClicked(){
       roomNum += 1
     }
     if (roomNum==0 && mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
-      textSize(100)
-      fill("red")
-      text("When was Trinity founded?", 330,268)
+      
     }
 
     if (roomNum==3 && mouseX>=520 && mouseX<=580 && mouseY<=400 && mouseY>=145){

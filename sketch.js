@@ -23,22 +23,11 @@ let objects = ["pen","laptop","id","honor code"]
 let roomObject = [[],[1],[],[0],[3],[]]
 let inventory = []
 
+numPadArray = []
+correctArray = [1,7,0,9]
+
 let showNumpad = false
 let playSpeaker = false
-// let showNumpad = false
-// let showNumpad = false
-// let showNumpad = false
-// let showNumpad = false
-// let showNumpad = false
-// let showNumpad = false
-// let showNumpad = false
-// let showNumpad = false
-// let showNumpad = false
-// let showNumpad = false
-// let showNumpad = false
-// let showNumpad = false
-// let showNumpad = false
-// let showNumpad = false
 
 function preload() {
     roomArr[5] = loadImage("files/101.png")
@@ -46,6 +35,8 @@ function preload() {
     roomArr[1] = loadImage("files/libery.png")
     roomArr[4] = loadImage("files/lockers.png")
     roomArr[0] = loadImage("files/turf.png")
+
+    numpad = loadImage("files/numpadTrans.png")
 
     pen = loadImage("files/pen.jpg")
     laptop = loadImage("files/laptop.png")
@@ -103,9 +94,25 @@ function draw(){
       textSize(15)
       text("19", 606,332)
     }
+
+    if (showNumpad) {
+      text(String(numPadArray), 250, 100)
+      image(numpad, 200, 100, 200, 250)
+    }
+
     text(mouseX+"   "+mouseY,mouseX,mouseY)
+    // text(returnString(numPadArray), 250,100)
+    
+
 }
 
+function returnString(numPadArray) {
+  let str
+  for(let i = 0; i <= numPadArray.length(); i += 1) {
+    str += String(i)
+  }
+  return str
+}
 
 function mouseClicked() {
     //console.log(mouseX, mouseY)
@@ -120,16 +127,88 @@ function mouseClicked() {
     }
     
     // Turf
-    if (roomNum==0 && mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
-<<<<<<< HEAD
-      
-=======
-      //sound
->>>>>>> 021dc3ff15936a22529f9305ee793855f027a9f1
+    if (roomNum==0 && mouseX >= 368-6 && mouseX <= 368+6 && mouseY <= 273+6 && mouseY >= 273-6){
+      loudSpeakerSound.play()
+      showNumpad = false
     }
 
     // lockers
-    if (roomNum==3 && mouseX>=520 && mouseX<=580 && mouseY<=400 && mouseY>=145){
-      //show numpad
+    if (roomNum==4 && mouseX>=520 && mouseX<=580 && mouseY<=400 && mouseY>=145){
+      if (showNumpad) {
+        showNumpad = false
+      } else {
+        showNumpad = true
+      }
     }
+
+    if (roomNum == 3) {
+      showNumpad = false
+    }
+
+    if (roomNum == 2) {
+      showNumpad = false
+    }
+
+    if (roomNum == 1) {
+      showNumpad = false
+    }
+
+    if(showNumpad) {
+      if (mouseX <= 250 + 20 && mouseX >= 250 - 20 && mouseY <= 150 + 20 && mouseY >= 150 - 20) {
+        numPadArray.push(1)
+        console.log(numPadArray)
+      }
+      else if (mouseX <= 300 + 20 && mouseX >= 300 - 20 && mouseY <= 150 + 20 && mouseY >= 150 - 20) {
+        numPadArray.push(2)
+        console.log(numPadArray)
+      }
+      else if (mouseX <= 350 + 20 && mouseX >= 350 - 20 && mouseY <= 150 + 20 && mouseY >= 150 - 20) {
+        numPadArray.push(3)
+        console.log(numPadArray)
+      }
+      else if (mouseX <= 250 + 20 && mouseX >= 250 - 20 && mouseY <= 200 + 20 && mouseY >= 200 - 20) {
+        numPadArray.push(4)
+        console.log(numPadArray)
+      }
+      else if (mouseX <= 300 + 20 && mouseX >= 300 - 20 && mouseY <= 200 + 20 && mouseY >= 200 - 20) {
+        numPadArray.push(5)
+        console.log(numPadArray)
+      }
+      else if (mouseX <= 350 + 20 && mouseX >= 350 - 20 && mouseY <= 200 + 20 && mouseY >= 200 - 20) {
+        numPadArray.push(6)
+        console.log(numPadArray)
+      }
+
+      else if (mouseX <= 250 + 20 && mouseX >= 250 - 20 && mouseY <= 250 + 20 && mouseY >= 250 - 20) {
+        numPadArray.push(7)
+        console.log(numPadArray)
+      }
+      else if (mouseX <= 300 + 20 && mouseX >= 300 - 20 && mouseY <= 250 + 20 && mouseY >= 250 - 20) {
+        numPadArray.push(8)
+        console.log(numPadArray)
+      }
+      else if (mouseX <= 350 + 20 && mouseX >= 350 - 20 && mouseY <= 250 + 20 && mouseY >= 250 - 20) {
+        numPadArray.push(9)
+        console.log(numPadArray)
+      }
+      else if (mouseX <= 300 + 20 && mouseX >= 300 - 20 && mouseY <= 300 + 20 && mouseY >= 300 - 20) {
+        numPadArray.push(0)
+        console.log(numPadArray)
+      }
+      else if (mouseX <= 250 + 20 && mouseX >= 250 - 20 && mouseY <= 300 + 20 && mouseY >= 300 - 20) {
+        // x
+      }
+      else if (mouseX <= 350 + 20 && mouseX >= 350 - 20 && mouseY <= 300 + 20 && mouseY >= 300 - 20) {
+        if(numPadArray == correctArray) {
+          text("Correct!", 250, 80)
+          inventory.push(2)
+        } else {
+          numPadArray = []
+          text("wrong!", 250, 80)
+        }
+      }
+
+    }
+
+    
   }

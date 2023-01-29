@@ -1,4 +1,3 @@
-
 let exitImage
 let classroomImage
 let libraryImage
@@ -6,6 +5,7 @@ let lockersImage
 let turfImage
 let honorCodeImage
 
+let roomNum=0
 let roomArr=[];
 
 function preload() {
@@ -20,7 +20,20 @@ function setup(){
     createCanvas(650,500)
 }
 function draw(){
-
-    image(roomArr[num], 0,0,650,500)
-    
+    image(roomArr[roomNum], 0,0,650,500)
+    noStroke()
+    fill("green")
+    triangle(25,440, 55, 420, 55, 460)
+    triangle(630, 440, 600, 420, 600,460)
+        
 }
+
+
+function mouseClicked(){
+    if (mouseX>=20 && mouseX<=60 && mouseY<=460 && mouseY>=420 && roomNum>0){
+      roomNum -=1
+    } 
+    if (mouseX>=600 && mouseX<=630 && mouseY<=460 && mouseY>=420 && roomNum<5){
+      roomNum += 1
+    }
+  }

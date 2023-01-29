@@ -41,18 +41,20 @@ let playSpeaker = false
 // let showNumpad = false
 
 function preload() {
-    roomArr[4] = loadImage("files/101.png")
+    roomArr[5] = loadImage("files/101.png")
     roomArr[2] = loadImage("files/classroom.png")
     roomArr[1] = loadImage("files/libery.png")
-    roomArr[3] = loadImage("files/lockers.png")
+    roomArr[4] = loadImage("files/lockers.png")
     roomArr[0] = loadImage("files/turf.png")
 
     pen = loadImage("files/pen.jpg")
     laptop = loadImage("files/laptop.png")
     // id = loadImage("files/id.png)
     honorCodeImage = loadImage("files/honorCodeImage.png")
-    loudSpeakerSoubnd = loadSound('files/lmao.mp3')
+    loudSpeakerSound = loadSound('files/lmao.mp3')
     charger=loadImage("files/79954.png")
+    printer =loadImage("files/229453.png")
+    roomArr[3]=loadImage("files/kolman.jpeg")
 }
 function setup(){
     createCanvas(650,500)
@@ -131,7 +133,11 @@ function mouseClicked() {
     
     // Turf
     if (roomNum==0 && mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
-
+<<<<<<< HEAD
+      
+=======
+      //sound
+>>>>>>> 021dc3ff15936a22529f9305ee793855f027a9f1
     }
 
     // lockers

@@ -80,7 +80,11 @@ function draw(){
 
     if (roomNum == 1){
       if (roomObject[1].length != 0){
-        image(laptop,100,100)
+        push();
+        translate(436,265)
+        scale(.25)
+        image(laptop,0,0)
+        pop();
       }
     }
     if (roomNum==2){
@@ -88,7 +92,15 @@ function draw(){
       image(printer, 370, 260, 50, 50)
       
     }
-    if (roomNum==3){
+
+    if (roomNum == 3){
+      push();
+        translate(436,265)
+        scale(.25)
+        image(pen,0,0)
+        pop();
+    }
+    if (roomNum==4){
       fill(0)
       textSize(8)
       text("15", 441,272)

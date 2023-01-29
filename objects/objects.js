@@ -54,34 +54,23 @@ class lockerCode {
 }
 
 class honorCode {
-    constructor(hasPen, x, y) {
-        this.hasPen = hasPen
-        this.signature = ""
-        this.x = x
-        this.y = y
 
-    }
+  constructor(hasPen, x, y, image) {
+      this.hasPen = hasPen
+      this.signature = ""
+      this.x = x
+      this.y = y
+      this.image = image
+  }
 
-    update() {
-        if (this.hasPen === true) {
-            this.show()
-        }
-    }
+  update() {
+      if (this.hasPen === true) {
+          this.show()
+      }
+  }
 
-    show() {
-        image(honorCodeImage, this.x, this.y)
-        // checkbox
-    }
-}
-
-honorCodes = []
-
-function setup() {
-    createCanvas(400, 400)
-    honorCodes.push(new honorCode(true, 100, 100))
-}
-  
-function draw() {
-    background(220)
-    honorCodes[0].show()
+  show() {
+      image(image, this.x, this.y)
+      // checkbox
+  }
 }

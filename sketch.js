@@ -45,7 +45,7 @@ function mouseClicked(){
     if (mouseX>=20 && mouseX<=60 && mouseY<=460 && mouseY>=420 && roomNum>0){
       roomNum -=1
     } 
-    if (mouseX>=600 && mouseX<=630 && mouseY<=460 && mouseY>=420 && roomNum<4){
+    if (mouseX>=600 && mouseX<=630 && mouseY<=460 && mouseY>=420 && roomNum<5){
       roomNum += 1
     }
     if (mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){

@@ -123,9 +123,19 @@ function draw(){
       text("19", 606,332)
     }
     text(mouseX+"   "+mouseY,mouseX,mouseY)
-    if (inventory.includes(objects[3])){
+    if (inventory.includes(0)){
+      image(pen, 80,410,60,60)
+    }
+    if (inventory.includes(1)){
+      image(laptop, 230,410,50,25)
+    }
+    if (inventory.includes(2)){
+      image(id, 380,410,50,60)
+    }
+    if (inventory.includes(3)){
       image(honorCodeImage, 475+30+25,410,50,60)
     }
+    
 
 }
 
@@ -149,7 +159,7 @@ function mouseClicked() {
     }
 
     if (roomNum==2 && mouseX>=370 && mouseX <=420 && mouseY>=265 && mouseY<=300){
-      inventory.push(objects[3])
+      inventory.push(3)
       
     }
 

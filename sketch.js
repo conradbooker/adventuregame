@@ -51,7 +51,6 @@ function preload() {
     laptop = loadImage("files/laptop.png")
     // id = loadImage("files/id.png)
     honorCodeImage = loadImage("files/honorCodeImage.png")
-    
     loudSpeakerSoubnd = loadSound('files/lmao.mp3')
     charger=loadImage("files/79954.png")
 }
@@ -60,6 +59,7 @@ function setup(){
     background(200)
 }
 function draw(){
+    roomNum=2
     image(roomArr[roomNum], 0,0,650,500)
     strokeWeight(0)
     fill("green")
@@ -82,7 +82,9 @@ function draw(){
       }
     }
     if (roomNum==2){
-      image(charger, 360,288, 70, 35)
+      image(charger, 370,290, 70, 35)
+      image(printer, 370, 260, 50, 50)
+      
     }
     if (roomNum==3){
       fill(0)
@@ -109,12 +111,20 @@ function mouseClicked(){
     if (mouseX>=600 && mouseX<=630 && mouseY<=460 && mouseY>=420 && roomNum<5){
       roomNum += 1
     }
-
+    
     // Turf
     if (roomNum==0 && mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
-    //
+<<<<<<< HEAD
+      
+=======
+      //sound
+>>>>>>> 021dc3ff15936a22529f9305ee793855f027a9f1
     }
+
+    //
     if (roomNum==3 && mouseX>=520 && mouseX<=580 && mouseY<=400 && mouseY>=145){
+      //you clicked your locker
       //show numpad
     }
+
   }

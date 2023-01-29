@@ -68,7 +68,13 @@ function draw(){
     fill("green")
     triangle(25,440, 55, 420, 55, 460)
     triangle(630, 440, 600, 420, 600,460)
-    image(pen,250,250)
+
+    fill(160,82,45)
+    rect(55+25, 410, 50, 60)
+    rect(175+30+25, 410, 50, 60)
+    rect(325+30+25, 410, 50, 60)
+    rect(475+30+25, 410, 50, 60)
+
     // turf
     if (roomNum===0){
       fill("white")
@@ -144,4 +150,20 @@ function mouseClicked() {
     }
 
     //laptop in inventory
+    if (roomNum==1 && mouseX>=435 && mouseX<=536 && mouseY<=320 && mouseY>=260){
+      console.log("clilck")
+      inventory.push(1)
+      roomObject[1].pop()
+
+      console.log(inventory)
+      console.log(roomObject)
+    }
+
+    if (roomNum==3 && mouseX>=275 && mouseX<=290 && mouseY<=326 && mouseY>=300){
+
+      inventory.push(0)
+      roomObject[3].pop()
+
+
+    }
   }

@@ -7,7 +7,6 @@ let honorCodeImage
 
 let roomNum=0
 let roomArr=[];
-let roomObjs=[["speakerButton", "speaker"], ["librarian", "pen", "laptop"], ["charger", "printer"], ["phone", "honorCode"], ["ID"]]
 
 function preload() {
     roomArr[4] = loadImage("files/101.png")
@@ -16,6 +15,7 @@ function preload() {
     roomArr[3] = loadImage("files/lockers.png")
     roomArr[0] = loadImage("files/turf.png")
     honorCodeImage = loadImage("files/honorCodeImage.png")
+    charger=loadImage("files/79954.png")
 }
 function setup(){
     createCanvas(650,500)
@@ -36,7 +36,9 @@ function draw(){
       fill("green")
       circle(368,273,6)
     }
-    
+    if (roomNum==2){
+      image(charger, 360,290, 75, 40)
+    }
         
 }
 

@@ -39,20 +39,38 @@ function draw(){
     if (roomNum==2){
       image(charger, 360,290, 75, 40)
     }
+    if (roomNum==3){
+      fill(0)
+      textSize(8)
+      text("15", 441,272)
+      textSize(9)
+      text("16", 454,277)
+      textSize(10)
+      text("17", 471,285)
+      textSize(13)
+      text("18", 524,304)
+      textSize(15)
+      text("19", 606,332)
+    }
         
 }
 
 
 function mouseClicked(){
+    console.log(mouseX, mouseY)
     if (mouseX>=20 && mouseX<=60 && mouseY<=460 && mouseY>=420 && roomNum>0){
       roomNum -=1
     } 
     if (mouseX>=600 && mouseX<=630 && mouseY<=460 && mouseY>=420 && roomNum<5){
       roomNum += 1
     }
-    if (mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
+    if (roomNum==0 && mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
       textSize(100)
       fill("red")
       text("When was Trinity founded?", 330,268)
+    }
+
+    if (roomNum==3 && mouseX>=520 && mouseX<=580 && mouseY<=400 && mouseY>=145){
+      //show numpad
     }
   }

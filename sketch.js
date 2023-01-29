@@ -121,6 +121,7 @@ function mouseClicked() {
     
     // Turf
     if (roomNum==0 && mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
+
       
     }
 

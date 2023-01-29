@@ -9,7 +9,8 @@ function setup() {
 function draw() {
   background("grey")
   rooms(num)
-  text(num,30,30)
+  fill("black")
+  text(num,50,50)
 
   noStroke()
   fill("brown")

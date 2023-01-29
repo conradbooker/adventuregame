@@ -40,11 +40,14 @@ function setup(){
     background(200)
 }
 function draw(){
+    
     image(roomArr[roomNum], 0,0,650,500)
     strokeWeight(0)
     fill("green")
     triangle(25,440, 55, 420, 55, 460)
     triangle(630, 440, 600, 420, 600,460)
+
+    // turf
     if (roomNum===0){
       fill("white")
       
@@ -53,7 +56,7 @@ function draw(){
       quad(330,268,325,265,325,281,330,278)
       quad(348,268,353,265,353,281,348,278)
       fill("green")
-      circle(368,273,6)
+      circle(368,273,10)
     }
     if (roomNum==2){
       image(charger, 360,288, 70, 35)
@@ -71,30 +74,33 @@ function draw(){
       textSize(15)
       text("19", 606,332)
     }
-        
+    text(mouseX+"   "+mouseY,mouseX,mouseY)
 }
 
 
-function mouseClicked(){
+function mouseClicked() {
     //console.log(mouseX, mouseY)
+
     if (mouseX>=20 && mouseX<=60 && mouseY<=460 && mouseY>=420 && roomNum>0){
       roomNum -=1
+      console.log("minus")
     } 
     if (mouseX>=600 && mouseX<=630 && mouseY<=460 && mouseY>=420 && roomNum<5){
       roomNum += 1
+      console.log("plus")
     }
 
     // Turf
-    if (roomNum==0 && mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
-<<<<<<< HEAD
-      
-=======
+    if (mouseX >= 358 && mouseX <= 378 && mouseY <= 283 && mouseY >= 263) {
+      console.log("heu")
+      text("hey", 100, 100)
+
+      // loadSpeakerSound.play()
       //sound
->>>>>>> 021dc3ff15936a22529f9305ee793855f027a9f1
     }
 
     // lockers
-    if (roomNum==3 && mouseX>=520 && mouseX<=580 && mouseY<=400 && mouseY>=145){
-      //show numpad
-    }
+    // if (roomNum==3 && mouseX>=520 && mouseX<=580 && mouseY<=400 && mouseY>=145){
+    //   //show numpad
+    // }
   }

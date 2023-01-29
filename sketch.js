@@ -119,11 +119,7 @@ function mouseClicked() {
     
     // Turf
     if (roomNum==0 && mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
-<<<<<<< HEAD
-      
-=======
-      //sound
->>>>>>> 021dc3ff15936a22529f9305ee793855f027a9f1
+
     }
 
     // lockers

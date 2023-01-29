@@ -54,9 +54,12 @@ class lockerCode {
 }
 
 class honorCode {
-    constructor(hasPen) {
+    constructor(hasPen, x, y) {
         this.hasPen = hasPen
         this.signature = ""
+        this.x = x
+        this.y = y
+
     }
 
     update() {
@@ -66,9 +69,19 @@ class honorCode {
     }
 
     show() {
-        
-        fill(227, 64, 64)
-        stroke(255)
-        circle(this.x, this.y, this.weight)
+        image(honorCodeImage, this.x, this.y)
+        // checkbox
     }
+}
+
+honorCodes = []
+
+function setup() {
+    createCanvas(400, 400)
+    honorCodes.push(new honorCode(true, 100, 100))
+}
+  
+function draw() {
+    background(220)
+    honorCodes[0].show()
 }

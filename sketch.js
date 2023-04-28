@@ -37,6 +37,7 @@ function preload() {
     roomArr[0] = loadImage("files/turf.png")
 
     numpad = loadImage("files/numpadTrans.png")
+    roomArr[3]=loadImage("files/kolman.jpeg")
 
     pen = loadImage("files/pen.jpg")
     laptop = loadImage("files/laptop.png")
@@ -45,20 +46,25 @@ function preload() {
     loudSpeakerSound = loadSound('files/lmao.mp3')
     charger=loadImage("files/79954.png")
     printer =loadImage("files/229453.png")
-    roomArr[3]=loadImage("files/kolman.jpeg")
+    
 }
 function setup(){
     createCanvas(650,500)
     background(200)
 }
 function draw(){
-
+    
     image(roomArr[roomNum], 0,0,650,500)
     strokeWeight(0)
     fill("green")
     triangle(25,440, 55, 420, 55, 460)
     triangle(630, 440, 600, 420, 600,460)
 
+    fill(160,82,45)
+    rect(55+25, 410, 50, 60)
+    rect(175+30+25, 410, 50, 60)
+    rect(325+30+25, 410, 50, 60)
+    rect(475+30+25, 410, 50, 60)
     // turf
     if (roomNum===0){
       fill("white")
@@ -73,12 +79,25 @@ function draw(){
 
     if (roomNum == 1){
       if (roomObject[1].length != 0){
-        image(laptop,100,100)
+        push();
+        translate(436,265)
+        scale(.25)
+        image(laptop,0,0)
+        pop();
       }
     }
     if (roomNum==2){
       image(charger, 370,290, 70, 35)
       image(printer, 370, 260, 50, 50)
+      
+    }
+
+    if (roomNum == 3){
+
+      if (roomObject[3].length != 0){
+        image(pen,270,300,25,25)
+        
+      }
       
     }
     if (roomNum==4){
@@ -101,9 +120,6 @@ function draw(){
     }
 
     text(mouseX+"   "+mouseY,mouseX,mouseY)
-    // text(returnString(numPadArray), 250,100)
-    
-
 }
 
 function returnString(numPadArray) {
@@ -127,9 +143,17 @@ function mouseClicked() {
     }
     
     // Turf
-    if (roomNum==0 && mouseX >= 368-6 && mouseX <= 368+6 && mouseY <= 273+6 && mouseY >= 273-6){
-      loudSpeakerSound.play()
-      showNumpad = false
+    if (roomNum==0 && mouseX>=368-6 && mouseX<=368+6 && mouseY<=273-6 && mouseY>=273+6){
+<<<<<<< HEAD
+      
+=======
+      //sound
+>>>>>>> 021dc3ff15936a22529f9305ee793855f027a9f1
+    }
+
+    if (roomNum==2 && mouseX>=370 && mouseX <=420 && mouseY>=265 && mouseY<=300){
+      inventory.push(3)
+      
     }
 
     // lockers
@@ -209,6 +233,4 @@ function mouseClicked() {
       }
 
     }
-
-    
   }
